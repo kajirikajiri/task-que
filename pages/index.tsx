@@ -70,7 +70,7 @@ const Home: NextPage = () => {
       const counter = counters.find(c=>c.id === id)
       if (counter === undefined) throw Error('Counter not found')
       counter.progress = counter.progress + counter.increase
-      if (counter.progress > counter.threhold) {
+      if (counter.progress >= counter.threhold) {
         counter.progress = counter.progress - counter.threhold
         return [
           ...counters,
